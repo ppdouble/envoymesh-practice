@@ -1,0 +1,8 @@
+docker network rm envoymeshnetwork
+docker network create \
+  --subnet=172.70.0.0/16 \
+  --gateway=172.70.0.1 \
+  envoymeshnetwork
+
+docker network ls | head -n 1
+docke network ls | grep envoymeshnetwork
