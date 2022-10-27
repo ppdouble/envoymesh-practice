@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+  front_envoy:
+    image: envoyproxy/envoy-alpine:v1.20.0
+    container_name: pp-front-proxy-envoy
+    environment:
+      - ENVOY_UID=0
+    volumes:
+    - ./fp-envoy.yaml:/etc/envoy/envoy.yaml
+    ports:
+    - '9901:9901'
+    - '9090:9090'
+    networks:
+      envoymeshnetwork:
+        ipv4_address: 172.70.1.11
+        aliases:
+        - front-proxy
+
+    extra_hosts:
+        - 'webserver01:172.70.2.21'
+        - 'webserver02:172.70.2.22'
+        - 'xdsserver:172.70.3.31'
+    
+ 
+networks:
+    envoymeshnetwork:
+        external:
+            name: envoymeshnetwork
+

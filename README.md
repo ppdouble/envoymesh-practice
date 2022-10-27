@@ -1,8 +1,5 @@
-# envoymesh-practice
 
-==================
-envoy mesh xds API
-==================
+## envoy mesh xds API server
 
 ## create network
 
@@ -12,3 +9,7 @@ docker network create \
   --gateway=172.70.0.1 \
   envoymeshnetwork
 ```
+
+## sample 
+
+see README in the corresponding folders
