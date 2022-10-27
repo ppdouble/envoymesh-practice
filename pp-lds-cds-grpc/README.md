@@ -76,6 +76,21 @@ Send a request from host to published port 9901
 
 `ikubernetes/envoy-xds-server:v0.1` seems have a little bug. It might not work after you modify the yaml file twice. You should restart container, then control plane reloads the new version file.  Anyway the front proxy envoy which sending gRPC request does not need to restart. It will reload the response of envoy type configuration dynamically.
 
+
+
+## Usage
+
+First create network
+
+```bash
+docker network create \
+  --subnet=172.70.0.0/16 \
+  --gateway=172.70.0.1 \
+  envoymeshnetwork
+```
+
+Then `./run.sh`
+
 ## Ref 
 [Dynamic configuration (control plane)  Official DOC](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/dynamic-configuration-control-plane)
 
