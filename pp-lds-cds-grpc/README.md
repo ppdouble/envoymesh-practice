@@ -54,7 +54,7 @@ using `ikubernetes/envoy-xds-server:v0.1` as xds API server to response xds API 
 
 listen 18000
 
-main work of control palne
+the core works of control palne
 
 - watching source information changes
 - create cache and new version snapshot
