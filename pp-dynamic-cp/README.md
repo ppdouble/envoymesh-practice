@@ -22,8 +22,8 @@
     - 19000:19000
 ```
 #### ports
-publish 10000 to client
-publish 19000 for admin-interface
+- publish 10000 to client
+- publish 19000 for admin-interface
 
 #### base image
 
