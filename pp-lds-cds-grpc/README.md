@@ -81,6 +81,5 @@ Send a request from host to published port 9901
 
 [dynamic-config-cp Github](https://github.com/envoyproxy/envoy/tree/main/examples/dynamic-config-cp)
 
-
-
+[iKubernetes/servicemesh_in_practise Github](https://github.com/iKubernetes/servicemesh_in_practise)
 

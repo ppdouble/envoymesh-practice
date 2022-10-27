@@ -220,9 +220,8 @@ X-Request-Id: 7f2d1344-be24-4301-ae7d-f8c376ad1e13
 ```
 ## Ref
 [Dynamic configuration (control plane)  Official DOC](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/dynamic-configuration-control-plane)
+
 [dynamic-config-cp Github](https://github.com/envoyproxy/envoy/tree/main/examples/dynamic-config-cp)
-
-
 
 To learn about this sandbox and for instructions on how to run it please head over
 to the [Envoy docs](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/dynamic-configuration-control-plane.html).
