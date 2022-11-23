@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+
+  webserver01:
+    image: ikubernetes/mini-http-server:v0.3
+    container_name: pp-webserver1
+    environment:
+      - PORT=8080
+      - HOST=127.0.0.1
+    hostname: webserver01
+    ports:
+    - '9921:9921'
+    networks:
+      envoymeshnetwork:
+        ipv4_address: 172.70.2.21
+
+  webserver01-sidecar:
+      #image: envoyproxy/envoy:v1.23.1
+    build:
+      context: .
+      dockerfile: Dockerfile-proxy
+    container_name: pp-webserver1-sidecar
+    environment:
+      - ENVOY_UID=0
+        #volumes:
+        #- ./envoy-sidecar-proxy.yaml:/etc/envoy/envoy.yaml
+    network_mode: "service:webserver01"
+    depends_on:
+    - webserver01
+
+
+networks:
+    envoymeshnetwork:
+        external:
+            name: envoymeshnetwork
+
