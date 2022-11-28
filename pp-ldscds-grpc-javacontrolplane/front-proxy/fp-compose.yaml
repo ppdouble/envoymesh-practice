@@ -8,7 +8,8 @@ services:
       dockerfile: Dockerfile-proxy
     container_name: pp-front-proxy-envoy
     environment:
-      - ENVOY_UID=0
+        #- ENVOY_UID=0
+      - TZ=Asia/Shanghai
         #volumes:
         #- ./fp-envoy.yaml/:/etc/envoy/envoy.yaml
     ports:

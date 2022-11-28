@@ -14,6 +14,9 @@ docker network create \
 Then `./run2.sh`
 
 ## Ref 
+
+[envoyproxy/java-control-plane](https://github.com/envoyproxy/java-control-plane)
+
 [Dynamic configuration (control plane)  Official DOC](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/dynamic-configuration-control-plane)
 
 [dynamic-config-cp Github](https://github.com/envoyproxy/envoy/tree/main/examples/dynamic-config-cp)

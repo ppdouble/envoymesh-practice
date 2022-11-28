@@ -2,5 +2,9 @@ FROM envoyproxy/envoy:v1.23.1
 
 COPY ./fp-envoy.yaml /etc/envoy/envoy.yaml
 RUN chmod go+r /etc/envoy/envoy.yaml
-CMD apt-get update && apt-get install -y iputils-ping & apt-get install -y curl & apt-get install -y vim
+ENV TZ="Asia/Shanghai"
+ENV DEBIAN_FRONTEND="noninteractive"
+RUN apt-get update && apt-get install -y iputils-ping && apt-get install -y curl && apt-get install -y vim && apt-get install --no-install-recommends -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+RUN whereis vim && date
 CMD ["/usr/local/bin/envoy", "-c /etc/envoy/envoy.yaml"]
