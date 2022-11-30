@@ -1,5 +1,5 @@
 node:
-  id: ppdouble-envoy_front_proxy
+  id: ppdoulbe-envoy_front_proxy-ads
   cluster: webcluster
 
 admin:
@@ -11,23 +11,18 @@ admin:
        port_value: 9901
 
 dynamic_resources:
-  lds_config:
-    resource_api_version: V3
-    api_config_source:
-      api_type: GRPC
-      transport_api_version: V3
-      grpc_services:
-      - envoy_grpc:
-          cluster_name: xds_cluster
-
+  ads_config:
+    api_type: GRPC
+    transport_api_version: V3
+    grpc_services:
+    - envoy_grpc:
+        cluster_name: xds_cluster
   cds_config:
     resource_api_version: V3
-    api_config_source:
-      api_type: GRPC
-      transport_api_version: V3
-      grpc_services:
-      - envoy_grpc:
-          cluster_name: xds_cluster
+    ads: {}
+  lds_config:
+    resource_api_version: V3
+    ads: {}
 
 static_resources:
   clusters:
